@@ -49,13 +49,13 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="TestsTutorial.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TDD2\TDD2.csproj">
+    <ProjectReference Include="..\TDD2\Calculator.csproj">
       <Project>{760ff575-f729-4bcc-9411-d227943dd021}</Project>
-      <Name>TDD2</Name>
+      <Name>Calculator</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

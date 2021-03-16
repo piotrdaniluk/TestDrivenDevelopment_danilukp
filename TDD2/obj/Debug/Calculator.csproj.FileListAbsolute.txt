@@ -1,0 +1,6 @@
+C:\Users\asus\Downloads\TDD2\TDD2\TDD2\bin\Debug\TDD2.dll
+C:\Users\asus\Downloads\TDD2\TDD2\TDD2\bin\Debug\TDD2.pdb
+C:\Users\asus\Downloads\TDD2\TDD2\TDD2\obj\Debug\Calculator.csprojAssemblyReference.cache
+C:\Users\asus\Downloads\TDD2\TDD2\TDD2\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
+C:\Users\asus\Downloads\TDD2\TDD2\TDD2\obj\Debug\TDD2.dll
+C:\Users\asus\Downloads\TDD2\TDD2\TDD2\obj\Debug\TDD2.pdb

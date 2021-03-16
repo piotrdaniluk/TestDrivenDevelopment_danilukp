@@ -8,73 +8,96 @@ namespace TDD2
 {
     public class Calculator
     {
-       
-            public static int Calculate(string input)
+        private static int? GetNum(string input)
+        {
+            int result;
+            if (Int32.TryParse(input, out result))
+            {
+                if (result > 1000)
+                {
+                    return 0;
+                }
+                if (result < 0)
+                {
+                    throw new ArgumentException();
+                }
+                return result;
+            }
+            return null;
+        }
+
+        private static int? TwoNumSum(string[] input)
+        {
+            if (input.Length == 2)
+            {
+                var first = GetNum(input[0]);
+                var second = GetNum(input[1]);
+                if ((first != null) && (second != null))
+                {
+                    return first + second;
+                }
+            }
+            return null;
+        }
+
+        private static int? ThreeNumSum(string[] input)
+        {
+            if (input.Length == 3)
+            {
+                string[] pair = new string[] { input[0], input[1] };
+                var first = TwoNumSum(pair);
+                var thirdnum = GetNum(input[2]);
+                if ((first != null) && (thirdnum != null))
+                {
+                    return first + thirdnum;
+                }
+            }
+            return null;
+        }
+
+        public static int? Calculate(string input)
             {
                 if (input == "")
+                {
                     return 0;
+                }
 
+                //delete leading # signs
                 input = input.TrimStart('#');
+                var num = GetNum(input);
 
-                var singleNumber = GetSingleNumber(input);
-                if (singleNumber != null)
-                    return singleNumber.Value;
-
-                var twoNumbersCommaDelim = input.Split(',');
-                var twoCommaDelimSum = GetSumOfTwoNumber(twoNumbersCommaDelim);
-                if (twoCommaDelimSum != null)
-                    return twoCommaDelimSum.Value;
-
-                var twoNumbersNewLineDelim = input.Split('\n');
-                var twoNewLineDelimSum = GetSumOfTwoNumber(twoNumbersNewLineDelim);
-                if (twoNewLineDelimSum != null)
-                    return twoNewLineDelimSum.Value;
-
-                var threeNumbers = input.Split('\n', ',');
-                var threeNumbersSum = GetSumOfThreeNumber(threeNumbers);
-                if (threeNumbersSum != null)
-                    return threeNumbersSum.Value;
-
-                return int.MinValue;
-            }
-
-            private static int? GetSingleNumber(string input)
-            {
-                var isSingleNumber = Int32.TryParse(input, out int result);
-                if (isSingleNumber)
+                if (num != null)
                 {
-                    if (result < 0)
-                        throw new ArgumentException();
-                    else if (result > 1000)
-                        return 0;
-                    return result;
+                    return num;
                 }
-                return null;
+
+                //split in respect to \n
+                var pair = input.Split('\n');
+                var sum = TwoNumSum(pair);
+
+                if (sum != null)
+                {
+                    return sum;
+                }
+
+                //split in respect to ,
+                var pair2 = input.Split(',');
+                var sum2 = TwoNumSum(pair2);
+                if (sum2 != null)
+                {
+                    return sum2;
+                }
+
+                //split in respect to , and #
+                var pair3 = input.Split('\n', ',');
+                var sum3 = ThreeNumSum(pair3);
+                if (sum3 != null)
+                    return sum3;
+
+                return 0;
             }
 
-            private static int? GetSumOfTwoNumber(string[] twoNumbers)
-            {
-                if (twoNumbers.Length == 2)
-                {
-                    var firstNum = GetSingleNumber(twoNumbers[0]);
-                    var secondNum = GetSingleNumber(twoNumbers[1]);
-                    if (firstNum != null && secondNum != null)
-                        return firstNum.Value + secondNum.Value;
-                }
-                return null;
-            }
-
-            private static int? GetSumOfThreeNumber(string[] threeNumbers)
-            {
-                if (threeNumbers.Length == 3)
-                {
-                    var firstSum = GetSumOfTwoNumber(new string[] { threeNumbers[0], threeNumbers[1] });
-                    var lastNumber = GetSingleNumber(threeNumbers[2]);
-                    if (firstSum != null && lastNumber != null)
-                        return firstSum.Value + lastNumber.Value;
-                }
-                return null;
-            }
+         
 
         }
     }
