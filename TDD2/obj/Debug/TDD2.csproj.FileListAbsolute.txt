@@ -1,0 +1,11 @@
+C:\Users\macie\Desktop\SE2\TDD2\TDD2\TDD2\bin\Debug\TDD2.dll
+C:\Users\macie\Desktop\SE2\TDD2\TDD2\TDD2\bin\Debug\TDD2.pdb
+C:\Users\macie\Desktop\SE2\TDD2\TDD2\TDD2\obj\Debug\TDD2.csprojAssemblyReference.cache
+C:\Users\macie\Desktop\SE2\TDD2\TDD2\TDD2\obj\Debug\TDD2.dll
+C:\Users\macie\Desktop\SE2\TDD2\TDD2\TDD2\obj\Debug\TDD2.pdb
+C:\Users\asus\Downloads\TDD2\TDD2\TDD2\bin\Debug\TDD2.dll
+C:\Users\asus\Downloads\TDD2\TDD2\TDD2\bin\Debug\TDD2.pdb
+C:\Users\asus\Downloads\TDD2\TDD2\TDD2\obj\Debug\TDD2.csprojAssemblyReference.cache
+C:\Users\asus\Downloads\TDD2\TDD2\TDD2\obj\Debug\TDD2.csproj.CoreCompileInputs.cache
+C:\Users\asus\Downloads\TDD2\TDD2\TDD2\obj\Debug\TDD2.dll
+C:\Users\asus\Downloads\TDD2\TDD2\TDD2\obj\Debug\TDD2.pdb
